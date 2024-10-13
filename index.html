@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="all.min.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        body{
+            box-sizing: border-box;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container{
+            background-color: rgb(12, 12, 66);
+            height: 600px;
+            width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        h1{
+            color: #ffffff;
+            margin: 250px 20px 40px 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        input{
+            margin-left: 20px;
+            height: 40px;
+            width: 320px;
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            padding-left: 10px;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+
+        input::placeholder{
+            color: #ffffff;
+            font-size: 10px;
+        }
+
+        button{
+            margin-left: 20px;
+            height: 40px;
+            width: 335px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: #ffffff;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+     
+        <h1 id="welcome">Welcome To Quiz Game</h1>
+        <input type="text" placeholder="Username" id="username" required> <br>
+        <button onclick="start()">Start</button>
+  
+        </div>
+
+        <script src="script.js"></script>
+    <script src="all.min.js"></script>
+</body>
+</html>

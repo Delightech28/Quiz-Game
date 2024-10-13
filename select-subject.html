@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science & Nature | Page 1</title>
+    <link rel="stylesheet" href="all.min.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        body{
+            box-sizing: border-box;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container{
+            background-color: rgb(12, 12, 66);
+            height: 600px;
+            width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        nav{
+           background-color: rgb(11, 11, 111);
+           height: 70px;
+           margin-top: -15.3px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            color: #FFFFFF;
+        }
+
+        ul{
+            list-style-type: none; 
+            display: flex;
+            padding-top:32px ;
+        }
+
+        nav ul #icon{
+            margin-left: 120px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        nav ul #category{
+            font-size: 18px;
+           
+        }
+
+        .quiz_ques{
+            padding: 20px;
+            color: #FFFFFF;
+            margin-top: 50px;
+        }
+
+        .option-a{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .A{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-b{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .B{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-c{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .C{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-d{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .D{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+      
+        
+      
+
+       
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li id="category"></li>
+             
+            </ul>
+        </nav>
+
+
+        <div class="quiz_ques">
+            <span>  
+               Select any of the following Subject.</span>
+
+            <div class="option-a" onclick="Mathematics()" id="option-a">
+                <span class="A"><i class="fa-solid fa-calculator"></i></span>
+                Mathematics
+            </div>
+
+            <div class="option-b" onclick="science()" id="option-b">
+                <span class="B"><i class="fa-solid fa-flask"></i></span>
+                Science & Nature
+            </div>
+
+            <div class="option-c" onclick="history()" id="option-c">
+                <span class="C"><i class="fa-solid fa-rectangle-history"></i></span>
+                History
+            </div>
+
+            <div class="option-d" onclick="economics()" id="option-d">
+                <span class="D"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
+                Economics
+            </div>
+        </div>
+
+    </div>
+
+   
+    <script src="all.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        let username = localStorage.getItem("username");
+        if(username){
+            document.getElementById("category").textContent = username;
+        }else{
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science & Nature | Page 8</title>
+    <link rel="stylesheet" href="all.min.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        body{
+            box-sizing: border-box;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container{
+            background-color: rgb(12, 12, 66);
+            height: 600px;
+            width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        nav{
+           background-color: rgb(11, 11, 111);
+           height: 70px;
+           margin-top: -15.3px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            color: #FFFFFF;
+        }
+
+        ul{
+            list-style-type: none; 
+            display: flex;
+            padding-top:32px ;
+        }
+
+        nav ul #icon{
+            margin-left: 120px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        nav ul #category{
+            font-size: 18px;
+           
+        }
+        
+        .quiz_details{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            color: #FFFFFF;
+            margin-left:10px;
+            margin-right:10px;
+        }
+
+        .quiz_ques{
+            padding: 20px;
+            color: #FFFFFF;
+        }
+
+        .option-a{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .A{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-b{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .B{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-c{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .C{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .option-d{
+            padding: 15px 30px;
+            background-color: #ffffff69;
+            border-radius: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .D{
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 50px;
+            margin-left: -15px;
+        }
+
+        .submit{
+            padding: 15px 150px;
+            background-color: #ffffff69;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .next{
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        #quitting_msg{
+            width: 350px;
+            height: 250px;
+            background-color: #333;
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 150px;
+            border-radius: 5px;
+            text-align: center;
+            color: #FFFFFF;
+            display: none;
+        }
+
+        #quitting_msg p{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #cancelling-i{
+            float: right;
+            padding: 10px;
+            background-color: #ffffff69;
+            cursor: pointer;
+        }
+
+        .try-btn{
+            padding: 15px 85px;
+            background-color: #ffffff69;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 600;
+           
+        }
+        
+        .try{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .quit-btn{
+            padding: 15px 85px;
+            background-color:transparent;
+            border: none;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 600;
+           
+        }
+        
+        .quit{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        #time-up-msg{
+            width: 350px;
+            height: 250px;
+            background-color: #333;
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 150px;
+            border-radius: 5px;
+            text-align: center;
+            color: #FFFFFF;
+            display: none;
+        }
+
+       
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+        
+        <nav>
+            <ul>
+                <li id="category">Science and Nature</li>
+                <li id="icon" onclick="quitting_msg()"><i class="fa-solid fa-xmark" ></i></li>
+            </ul>
+        </nav>
+
+        <!-- Quitting  -->
+        <div id="quitting_msg">
+            <i class="fa-solid fa-xmark" id="cancelling-i" onclick="cancelling_i()"></i>
+            <h2>You can do this! &#128170</h2>
+            <p>Don't lose your learning progress! Have you asked a friend yet for a hint?</p>
+
+            <div class="try" onclick="cancelling_i()">
+                <button class="try-btn">OK, LET'S TRY THAT</button>
+            </div> 
+
+            <div class="quit">
+                <button class="quit-btn">QUIT ANYWAY</button>
+            </div>
+
+        </div>
+
+        <!-- Time up -->
+        <div id="time-up-msg">
+            <h2>Time Up &#128577</h2>
+            <p>Do you want to try again?</p>
+
+            <div class="try" onclick="try_again()">
+                <button class="try-btn">TRY AGAIN</button>
+            </div> 
+
+            <div class="quit">
+                <button class="quit-btn">QUIT ANYWAY</button>
+            </div>
+
+        </div>
+        <div class="quiz_details">
+            
+        <p>Quiz: 8</p>
+        
+        </div>
+        <hr style="margin-top: -10px; margin-left:10px; margin-right:10px;">
+
+        <div class="quiz_ques">
+            <span style="font-weight: bold;">8.&nbsp;&nbsp;</span>
+            <span>  
+                What is the largest organ in the human body?</span>
+
+            <div class="option-a" onclick="optionA()" id="option-a">
+                <span class="A">A</span>
+                Liver
+            </div>
+
+            <div class="option-b" onclick="optionB()" id="option-b">
+                <span class="B">B</span>
+                Brain
+            </div>
+
+            <div class="option-c" onclick="optionC()" id="option-c">
+                <span class="C">C</span>
+                Skin
+            </div>
+
+            <div class="option-d" onclick="optionD()" id="option-d">
+                <span class="D">D</span>
+                Heart
+            </div>
+        </div>
+
+
+         <div class="next" onclick="goToNextQuestion()">
+            <button class="submit">Next</button>
+        </div> 
+    </div>
+
+   
+    <script src="all.min.js"></script>
+    <script src="page-8.js"></script>
+</body>
+</html>
